@@ -37,7 +37,7 @@ if ( !class_exists( 'WhimsyCustomizerColors' ) ) {
 			$WhimsyCustomizerColors = new stdClass;
 
 			/* Define Whimsy constants. */
-			add_action( 'init', array( $this, 'constants' ), 1 );
+			add_action( 'init', array( $this, 'constants' ), 10 );
             
 			/* Remove actions hooked from conflicting plugins or themes. */
 			add_action( 'init', array( $this, 'unhook' ), 100 );
@@ -64,10 +64,10 @@ if ( !class_exists( 'WhimsyCustomizerColors' ) ) {
 			define( 'WHIMSY_COLORS_VERSION',   '0.1.1' );
 
 			/* Sets the path to the plugin directory. */
-            define( 'WHIMSY_COLORS_PATH',      plugin_dir_path( __FILE__ )  );
+            define( 'WHIMSY_COLORS_PATH',      trailingslashit( dirname( __FILE__ ) )  );
             
 			/* Sets the url to the plugin directory. */
-            define( 'WHIMSY_COLORS_URI',       plugin_dir_url( __FILE__ )   );
+            define( 'WHIMSY_COLORS_URI',       trailingslashit( dirname( __FILE__ ) )  );
                     
         }
    

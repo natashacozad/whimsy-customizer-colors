@@ -1,8 +1,8 @@
 <?php
 /*
  * Plugin Name: Whimsy: Customizer Colors
- * Version: 1.0.0
- * Plugin URI: http://www.whimsycreative.co/extend
+ * Version: 0.1.1
+ * Plugin URI: http://www.whimsycreative.co/framework/plus
  * Description: A plugin that adds more color options to Whimsy Framework.
  * Author: Whimsy Creative Co.
  * Author URI: http://www.whimsycreative.co
@@ -61,7 +61,7 @@ if ( !class_exists( 'WhimsyCustomizerColors' ) ) {
 		function constants() {
 
 			/* Sets the plugin version number. */
-			define( 'WHIMSY_COLORS_VERSION',   '1.0.0' );
+			define( 'WHIMSY_COLORS_VERSION',   '0.1.1' );
 
 			/* Sets the path to the plugin directory. */
             define( 'WHIMSY_COLORS_PATH',      plugin_dir_path( __FILE__ )  );

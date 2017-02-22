@@ -11,31 +11,16 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Lovely colors for lovely websites.
 
 == Description ==
-Whimsy+Colors is a lightweight plugin featuring a handful of pretty buttons, info boxes, an accordion, dividers, and more.
 
-Don't rely on a theme to provide your site with awesome colors, switch to the Whimsy+Colors plugin so you can change your theme on a whim.
 
 <h4>Features</h4>
 <ol>
 <li>Responsive!</li>
 <li>Made with CSS3.</li>
-<li>FontAwesome icons.</li>
-<li>Shortcode wizard for easy use!</li>
-<li>Buttons in multiple colors and sizes.</li>
-<li>Custom category and recent post listing colors.</li>
-<li>Content boxes: Plain, Info, Download, Warning, Tick, Heart.</li>
-<li>Accordion and panels for toggling content. </li>
-<li>Content dividers in 3 styles.</li>
-<li>Font Awesome icon colors.</li>
 </ol>
 
 <h4>Documentation</h4>
 More information and examples can be found at the [Whimsy+Colors Colors](http://colors.thefanciful.com/plugins/colors/ "Whimsy+Colors Colors").
-
-<h4>Translation</h4>
-<ul>
-<li>Serbo-Croatian (sr_RS) - [Borisa Djuraskovic](http://www.webhostinghub.com/ "Borisa Djuraskovic")</li>
-</ul>
 
 == Installation ==
 1. Unzip and upload \"whimsy-colors.zip\" to the \"/wp-content/plugins/\" directory.
@@ -62,3 +47,8 @@ You can view all colors available in the [Whimsy+Colors Colors](http://colors.th
 == To-Do ==
 * Auto-select text when highlighted for shortcode content.
 * A smarter shortcode wizard with conditional arguments.
+
+== DEVELOPMENT GUIDE ==
+* Create settings under /inc
+* Add style output inc/inline-styles
+* Add style output to customizer-colors.js

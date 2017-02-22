@@ -8,294 +8,117 @@
     // Clear out the original Colors section to make way for new colors.
     $wp_customize->remove_section( 'colors' );
     
-    // Add our new Colors section.
+    // Add our new Colors panel.
+	$wp_customize->add_panel( 'whimsy_extend_colors_panel', array(
+	    'priority' => 40,
+	    'capability' => 'edit_theme_options',
+	    'theme_supports' => '',
+	    'title' => __( 'Colors', 'whimsy-customizer-colors' ),
+	    'description' => __( 'More control over color options for Whimsy.', 'whimsy-customizer-colors' ),
+	) );
+
+    // Add our new Global Colors section.
 	$wp_customize->add_section(
-		'whimsy_extend_colors_section',
+		'whimsy_extend_global_colors_section',
 		array(
-			'title'      => __( 'Colors', 'whimsy-extend' ),
-			'priority'   => 40,
+			'title'      => __( 'Global Colors', 'whimsy-customizer-colors' ),
+			'priority'   => 10,
 			'capability' => 'edit_theme_options',
+            'description' => '',
+            'panel' => 'whimsy_extend_colors_panel',
+		)
+	);
+    // Add our new Menu Colors section.
+	$wp_customize->add_section(
+		'whimsy_extend_menu_colors_section',
+		array(
+			'title'      => __( 'Menu Colors', 'whimsy-customizer-colors' ),
+			'priority'   => 10,
+			'capability' => 'edit_theme_options',
+            'description' => '',
+            'panel' => 'whimsy_extend_colors_panel',
+		)
+	);
+    // Add our new Header Colors section.
+	$wp_customize->add_section(
+		'whimsy_extend_header_colors_section',
+		array(
+			'title'      => __( 'Header Colors', 'whimsy-customizer-colors' ),
+			'priority'   => 10,
+			'capability' => 'edit_theme_options',
+            'description' => '',
+            'panel' => 'whimsy_extend_colors_panel',
+		)
+	);
+    // Add our new Content Colors section.
+	$wp_customize->add_section(
+		'whimsy_extend_content_colors_section',
+		array(
+			'title'      => __( 'Content Colors', 'whimsy-customizer-colors' ),
+			'priority'   => 10,
+			'capability' => 'edit_theme_options',
+            'description' => '',
+            'panel' => 'whimsy_extend_colors_panel',
+		)
+	);
+    // Add our new Sidebar Colors section.
+	$wp_customize->add_section(
+		'whimsy_extend_sidebar_colors_section',
+		array(
+			'title'      => __( 'Sidebar Colors', 'whimsy-customizer-colors' ),
+			'priority'   => 10,
+			'capability' => 'edit_theme_options',
+            'description' => '',
+            'panel' => 'whimsy_extend_colors_panel',
+		)
+	);
+    // Add our new Footer Colors section.
+	$wp_customize->add_section(
+		'whimsy_extend_footer_colors_section',
+		array(
+			'title'      => __( 'Footer Colors', 'whimsy-customizer-colors' ),
+			'priority'   => 10,
+			'capability' => 'edit_theme_options',
+            'description' => '',
+            'panel' => 'whimsy_extend_colors_panel',
+		)
+	);
+    // Add our new Mosaic Colors section.
+	$wp_customize->add_section(
+		'whimsy_extend_mosaic_colors_section',
+		array(
+			'title'      => __( 'Mosaic Colors', 'whimsy-customizer-colors' ),
+			'priority'   => 10,
+			'capability' => 'edit_theme_options',
+            'description' => '',
+            'panel' => 'whimsy_extend_colors_panel',
+		)
+	);
+    // Add our new Forms Colors section.
+	$wp_customize->add_section(
+		'whimsy_extend_forms_colors_section',
+		array(
+			'title'      => __( 'Form Colors', 'whimsy-customizer-colors' ),
+			'priority'   => 10,
+			'capability' => 'edit_theme_options',
+            'description' => '',
+            'panel' => 'whimsy_extend_colors_panel',
 		)
 	);
 
-    // Add Color Controls
-	$wp_customize->add_setting(
-	    'whimsy_link_color',
-	    array(
-	        'default' => '',
-	        'sanitize_callback' => 'sanitize_hex_color'
-	    )
-	);
-	$wp_customize->add_control(
-	    new WP_Customize_Color_Control(
-	        $wp_customize,
-	        'whimsy_link_color',
-	        array(
-	            'label' 	=> __( 'Link Color', 'whimsy-framework' ),
-	            'section' 	=> 'whimsy_extend_colors_section',
-	            'settings' 	=> 'whimsy_link_color'
-	        )
-	    )
-	);
-
-    // Add Color Controls
-	$wp_customize->add_setting(
-	    'whimsy_link_hover_color',
-	    array(
-	        'default' => '',
-	        'sanitize_callback' => 'sanitize_hex_color'
-	    )
-	);
-	$wp_customize->add_control(
-	    new WP_Customize_Color_Control(
-	        $wp_customize,
-	        'whimsy_link_hover_color',
-	        array(
-	            'label' 	=> __( 'Link Hover Color', 'whimsy-framework' ),
-	            'section' 	=> 'whimsy_extend_colors_section',
-	            'settings' 	=> 'whimsy_link_hover_color'
-	        )
-	    )
-	);
-
-	$wp_customize->add_setting(
-	    'whimsy_alt_color',
-	    array(
-	        'default' => '',
-	        'sanitize_callback' => 'sanitize_hex_color'
-	    )
-	);
-    
-	$wp_customize->add_control(
-	    new WP_Customize_Color_Control(
-	        $wp_customize,
-	        'whimsy_alt_color',
-	        array(
-	            'label' 	=> __( 'Highlight Color', 'whimsy-framework' ),
-	            'section' 	=> 'whimsy_extend_colors_section',
-	            'settings' 	=> 'whimsy_alt_color'
-	        )
-	    )
-	);
-
-	$wp_customize->add_setting(
-	    'whimsy_body_color',
-	    array(
-	        'default' => '',
-	        'sanitize_callback' => 'sanitize_hex_color'
-	    )
-	);
-	$wp_customize->add_control(
-	    new WP_Customize_Color_Control(
-	        $wp_customize,
-	        'whimsy_body_color',
-	        array(
-	            'label' 	=> __( 'Body Text Color', 'whimsy-framework' ),
-	            'section' 	=> 'whimsy_extend_colors_section',
-	            'settings' 	=> 'whimsy_body_color'
-	        )
-	    )
-	);
-
-    // Add Menu Display Settings
-
-    // Menu bg color
-    $wp_customize->add_setting(
-        'whimsy_menu_background_color',
-        array(
-            'default' => '',
-            'sanitize_callback' => 'sanitize_hex_color'
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'whimsy_menu_background_color',
-            array(
-                'label'     => __( 'Menu Background Color', 'whimsy-framework' ),
-                'section'   => 'whimsy_extend_colors_section',
-                'settings'  => 'whimsy_menu_background_color'
-            )
-        )
-    );	
-
-    // Menu link color
-    $wp_customize->add_setting(
-        'whimsy_menu_link_color',
-        array(
-            'default' => '',
-            'sanitize_callback' => 'sanitize_hex_color'
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'whimsy_menu_link_color',
-            array(
-                'label'     => __( 'Menu link color', 'whimsy-framework' ),
-                'section'   => 'whimsy_extend_colors_section',
-                'settings'  => 'whimsy_menu_link_color'
-            )
-        )
-    );  
-
-    // Menu link color :hover
-    $wp_customize->add_setting(
-        'whimsy_menu_link_hover_color',
-        array(
-            'default' => '',
-            'sanitize_callback' => 'sanitize_hex_color'
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'whimsy_menu_link_hover_color',
-            array(
-                'label'     => __( 'Menu link hover color', 'whimsy-framework' ),
-                'section'   => 'whimsy_extend_colors_section',
-                'settings'  => 'whimsy_menu_link_hover_color'
-            )
-        )
-    );  
-
-
-    // Submenu bg color
-    $wp_customize->add_setting(
-        'whimsy_submenu_background_color',
-        array(
-            'default' => '',
-            'sanitize_callback' => 'sanitize_hex_color'
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'whimsy_submenu_background_color',
-            array(
-                'label'     => __( 'Sub-menu background color', 'whimsy-framework' ),
-                'section'   => 'whimsy_extend_colors_section',
-                'settings'  => 'whimsy_submenu_background_color'
-            )
-        )
-    );  
-
-    // Submenu link color
-    $wp_customize->add_setting(
-        'whimsy_submenu_link_color',
-        array(
-            'default' => '',
-            'sanitize_callback' => 'sanitize_hex_color'
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'whimsy_submenu_link_color',
-            array(
-                'label'     => __( 'Sub-Menu link color', 'whimsy-framework' ),
-                'section'   => 'whimsy_extend_colors_section',
-                'settings'  => 'whimsy_submenu_link_color'
-            )
-        )
-    ); 
-
-    // Header container background color
-    $wp_customize->add_setting(
-        'whimsy_header_container_bg_color',
-        array(
-            'default' => '',
-            'sanitize_callback' => 'sanitize_hex_color'
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'whimsy_header_container_bg_color',
-            array(
-                'label'     => __( 'Header container background color', 'whimsy-framework' ),
-                'section'   => 'whimsy_extend_colors_section',
-                'settings'  => 'whimsy_header_container_bg_color'
-            )
-        )
-    ); 
-
-    // Masthead background color
-    $wp_customize->add_setting(
-        'whimsy_masthead_bg_color',
-        array(
-            'default' => '',
-            'sanitize_callback' => 'sanitize_hex_color'
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'whimsy_masthead_bg_color',
-            array(
-                'label'     => __( 'Masthead background color', 'whimsy-framework' ),
-                'section'   => 'whimsy_extend_colors_section',
-                'settings'  => 'whimsy_masthead_bg_color'
-            )
-        )
-    ); 
-
-    // Site Title color
-	$wp_customize->add_setting(
-	    'whimsy_site_title_color',
-	    array(
-	        'default' => '',
-	        'sanitize_callback' => 'sanitize_hex_color'
-	    )
-	);
-	$wp_customize->add_control(
-	    new WP_Customize_Color_Control(
-	        $wp_customize,
-	        'whimsy_site_title_color',
-	        array(
-	            'label' 	=> __( 'Site Title color', 'whimsy-framework' ),
-	            'section' 	=> 'whimsy_extend_colors_section',
-	            'settings' 	=> 'whimsy_site_title_color'
-	        )
-	    )
-	);
-
-    // Site description color
-	$wp_customize->add_setting(
-	    'whimsy_site_desc_color',
-	    array(
-	        'default' => '',
-	        'sanitize_callback' => 'sanitize_hex_color'
-	    )
-	);
-	$wp_customize->add_control(
-	    new WP_Customize_Color_Control(
-	        $wp_customize,
-	        'whimsy_site_desc_color',
-	        array(
-	            'label' 	=> __( 'Site Description Color', 'whimsy-framework' ),
-	            'section' 	=> 'whimsy_extend_colors_section',
-	            'settings' 	=> 'whimsy_site_desc_color'
-	        )
-	    )
-	);
-
-    // Masthead text color
-    $wp_customize->add_setting(
-        'whimsy_masthead_text_color',
-        array(
-            'default' => '',
-            'sanitize_callback' => 'sanitize_hex_color'
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'whimsy_masthead_text_color',
-            array(
-                'label'     => __( 'Masthead text color', 'whimsy-framework' ),
-                'section'   => 'whimsy_extend_colors_section',
-                'settings'  => 'whimsy_masthead_text_color'
-            )
-        )
-    ); 
+    // Include Global Colors.
+    require_once WHIMSY_COLORS_PATH . 'inc/global.php' ;
+    // Include Menu Colors.
+    require_once WHIMSY_COLORS_PATH . 'inc/menu.php' ;
+    // Include Header Colors.
+    require_once WHIMSY_COLORS_PATH . 'inc/header.php' ;
+    // Include Content Colors.
+    require_once WHIMSY_COLORS_PATH . 'inc/content.php' ;
+    // Include Sidebar Colors.
+    require_once WHIMSY_COLORS_PATH . 'inc/sidebar.php' ;
+    // Include Footer Colors.
+    require_once WHIMSY_COLORS_PATH . 'inc/footer.php' ;
+    // Include Mosaic Colors.
+    require_once WHIMSY_COLORS_PATH . 'inc/mosaic.php' ;
+    // Include Forms Colors.
+    require_once WHIMSY_COLORS_PATH . 'inc/forms.php' ;

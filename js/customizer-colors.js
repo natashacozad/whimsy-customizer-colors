@@ -191,7 +191,7 @@
 		} );
 	} );
 
-	// Header container bg color
+	// Masthead container bg color
 	wp.customize( 'whimsy_masthead_bg_color', function( value ) {
 		value.bind( function( to ) {
 			if ( 'blank' === to ) {
@@ -209,7 +209,7 @@
 		} );
 	} );
     
-	// Header container bg color
+	// Masthead container bg color
 	wp.customize( 'whimsy_masthead_text_color', function( value ) {
 		value.bind( function( to ) {
 			if ( 'blank' === to ) {
@@ -220,11 +220,156 @@
 			} else {
 				$( "#masthead" ).css( {
 					'clip': 'auto',
+					'color': to,
+					'position': 'relative'
+				} );
+			}
+		} );
+	} );
+
+	// Content container bg color
+	wp.customize( 'whimsy_content_container_bg_color', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$( "#content-container" ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+				} );
+			} else {
+				$( "#content-container" ).css( {
+					'clip': 'auto',
 					'background': to,
 					'position': 'relative'
 				} );
 			}
 		} );
 	} );
+    
+	// Content container bg color
+	wp.customize( 'whimsy_content_container_text_color', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$( "#content-container" ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+				} );
+			} else {
+				$( "#content-container" ).css( {
+					'clip': 'auto',
+					'color': to,
+					'position': 'relative'
+				} );
+			}
+		} );
+	} );
+
+	// Content container link color
+	wp.customize( 'whimsy_content_container_link_color', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$( "#content-container a" ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+				} );
+			} else {
+				$( "#content-container a" ).css( {
+					'clip': 'auto',
+					'color': to,
+					'position': 'relative'
+				} );
+			}
+		} );
+	} );
+
+	// Content container link hover color
+	wp.customize( 'whimsy_content_container_link_hover_color', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$( "#content-container a:hover, #content-container a:active, #content-container a:focus" ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+				} );
+			} else {
+				$( "#content-container a:hover, #content-container a:active, #content-container a:focus" ).css( {
+					'clip': 'auto',
+					'color': to,
+					'position': 'relative'
+				} );
+			}
+		} );
+	} );
+    
+	// Post bg color
+	wp.customize( 'whimsy_post_bg_color', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$( "#primary .post" ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+				} );
+			} else {
+				$( "#primary .post" ).css( {
+					'clip': 'auto',
+					'background': to,
+					'position': 'relative'
+				} );
+			}
+		} );
+	} );
+    
+	// Post bg color
+	wp.customize( 'whimsy_post_text_color', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$( "#primary .post" ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+				} );
+			} else {
+				$( "#primary .post" ).css( {
+					'clip': 'auto',
+					'color': to,
+					'position': 'relative'
+				} );
+			}
+		} );
+	} );
+
+	// Post link color
+	wp.customize( 'whimsy_post_link_color', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$( "#primary .post a" ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+				} );
+			} else {
+				$( "#primary .post a" ).css( {
+					'clip': 'auto',
+					'color': to,
+					'position': 'relative'
+				} );
+			}
+		} );
+	} );
+
+	// Post link hover color
+	wp.customize( 'whimsy_post_link_hover_color', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$( "#primary .post a:hover, #primary .post a:active, #primary .post a:focus" ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+				} );
+			} else {
+				$( "#primary .post a:hover, #primary .post a:active, #primary .post a:focus" ).css( {
+					'clip': 'auto',
+					'color': to,
+					'position': 'relative'
+				} );
+			}
+		} );
+	} );
+    
     
 } )( jQuery );
